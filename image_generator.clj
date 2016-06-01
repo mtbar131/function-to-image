@@ -24,21 +24,6 @@
     [x y (bit-and x y)] ; mod by 256 for rgb limit
 ))
 
-;; JFrame setup and pixel coloring
-;;(def maxSize 250)
-
-;;(def frame (JFrame.))
-;; (.setVisible frame true)
-;; (.setSize frame maxSize maxSize)
-
-;;(def gfx (.getGraphics frame))
-
-;; (.setDefaultCloseOperation frame JFrame/EXIT_ON_CLOSE)
-
-;; (defn colorPixel [[x y color] gfx]
-;;   (.setColor gfx (java.awt.Color. color))
-;;   (.fillRect gfx x y 1 1))
-
 (defn makeImage [seq]
   (let [frameSize 250
         frame (doto (JFrame.)
@@ -52,8 +37,8 @@
 
 ;; Generate the image
 (makeImage (generateXorList 250))
-;(makeImage (generateXmodYList 250))
-;(makeImage (generateXandYList 250))
+(makeImage (generateXmodYList 250))
+(makeImage (generateXandYList 250))
 
 
 
